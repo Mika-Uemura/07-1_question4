@@ -7,6 +7,10 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
+        <x-app-layout>
+            @auth
+                {{ Auth::user()->name }}
+            @endauth
         <h1>Blog Name</h1>
         <a href='/posts/create'>create</a>
         <div class='posts'>
@@ -15,8 +19,9 @@
                     <h2 class='title'>
                         <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                     </h2>
-                    <p class='body'>{{ $post->body }}</p>
                     <a herf="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+                    <p class='body'>{{ $post->body }}</p>
+
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf
                         @method('DELETE')
@@ -37,5 +42,6 @@
                 }
             }
         </script>
+        </x-app-layout>
     </body>
 </html>
