@@ -16,8 +16,17 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
-                        {{ __('index') }}
-                    </e-nav-link>
+                        {{ __('Index') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('show')" :active="request()->routeIs('show')">
+                        {{ __('Show') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('create')" :active="request()->routeIs('create')">
+                        {{ __('Create') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('edit')" :active="request()->routeIs('edit')">
+                        {{ __('Edit') }}
+                    </x-nav-link>
                 </div>
             </div>
 
