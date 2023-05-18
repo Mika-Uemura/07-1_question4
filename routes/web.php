@@ -15,7 +15,7 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', [PostController::Class, 'index'])->name('index');
+Route::get('/', [PostController::class, 'index'])->name('index')->middleware('auth');
 
 Route::get('/', function () {
     return view('welcome');
