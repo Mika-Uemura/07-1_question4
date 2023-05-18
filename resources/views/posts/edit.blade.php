@@ -5,7 +5,6 @@
         <title>Blog</title>
     </head>
     <body>
-        <x-app-layout>
         <h1>Blog Name</h1>
         <form action="/posts/{{ $post->id }}" method="POST">
             @csrf
@@ -23,6 +22,5 @@
         <div class="footer">
             <a href="/post/{{ $post->id }}">戻る</a>
         </div>
-        </x-app-layout>
     </body>
 </html>
